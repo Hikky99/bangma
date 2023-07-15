@@ -20,4 +20,3 @@ To enhance the visual appeal and the prediction results, I employed  styling tec
 Conclusion
 In conclusion, this disease prediction model represents a significant achievement in the field of healthcare. By harnessing the power of the Decision Tree Classifier algorithm, I successfully developed a robust and accurate model capable of predicting various diseases. The project's outcomes, including the high training and testing accuracies of 100%, demonstrate the model's effectiveness in early disease detection. This project holds immense value in healthcare applications, as accurate disease predictions empower healthcare professionals to provide timely interventions, resulting in improved patient outcomes.
 
-Note: Please customize and expand upon the portfolio description, incorporating your own experiences, achievements, and any additional relevant details to showcase your expertise and contributions to the project.
