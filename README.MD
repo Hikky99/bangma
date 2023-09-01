@@ -1,6 +1,10 @@
 # Bangma Disease Model
 ### Author: Hamza Mohammed
 
+<p align="center">
+  <img src="lab_test_tube.jpg" alt="Image" width="50%">
+</p>
+
 ## Synopsis
 I developed this disease prediction model to accurately predict various diseases based on medical records. This project holds significant importance as disease prediction algorithms play a vital role in healthcare, aiding in early diagnosis, timely interventions, and improved patient outcomes.
 
