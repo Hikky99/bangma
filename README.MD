@@ -6,22 +6,139 @@
 </p>
 
 ## Synopsis
-I developed this disease prediction model to accurately predict various diseases based on medical records. This project holds significant importance as disease prediction algorithms play a vital role in healthcare, aiding in early diagnosis, timely interventions, and improved patient outcomes.
+I developed this disease prediction model to accurately predict various diseases based on medical records. This project is important as disease prediction algorithms increasingly play a vital role in healthcare, aiding in early diagnosis, timely interventions, and improved patient outcomes. This documentation provides a clear overview of the project's workflow, from data preparation to model training and evaluation.
 
-## Dataset
-I utilized a royalty free Kaggle dataset consisting of medical records with labeled diseases as the target variable. To handle data manipulation and model development, I used python Scikit-learn library and pandas for seamless data manipulation.
 
-## Data Preprocessing
-To ensure the quality and reliability of the dataset, I performed data preprocessing steps. This involved cleaning the data by removing duplicates and irrelevant records. Additionally, I transformed categorical variables using appropriate methods, such as one-hot encoding, to represent them numerically. Lastly, I split the dataset into training and testing sets for effective model evaluation.
 
-## Model Development
-To achieve accurate disease predictions, I carefully selected the Decision Tree Classifier algorithm. The Decision Tree Classifier is renowned for its ability to capture complex relationships within the data. I trained the model using the training data, enabling it to learn patterns and make accurate disease predictions.
+## Table of Contents
 
-## Prediction and Analysis
-Using the trained Decision Tree Classifier model, I made predictions on unseen test data. By applying the model's predict function, I obtained disease predictions for each record. To provide a comprehensive view of the model's performance, I created a comparison table that juxtaposed the predicted diseases with the actual disease labels. This analysis confirmed the high accuracy of the predictions, as both the training and testing accuracies achieved a remarkable 100% score. Precision, recall and f1-score were also 100%.
+* Data Preparation
+* Training the Model
+* Decision Tree Classifier
+* Random Forest Classifier
+* Evaluating the Model
+* Conclusion
 
-## Styling and Presentation
-To enhance the visual appeal and the prediction results, I employed  styling techniques. I formatted and styled the prediction results table to achieve a dark, elegant, and futuristic design. The styling choices emphasized readability and professionalism, ensuring the results were presented in a visually pleasing manner.
+## Imports
+The first step in this project is to import the necessary libraries that will be used for data manipulation, visualization, and machine learning. The following libraries are imported:
+
+
+import numpy as np
+import pandas as pd
+import seaborn as sb
+import matplotlib.pyplot as plt
+from warnings import filterwarnings
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
+
+## Data Preparation
+Once the necessary libraries are imported, the next step is to prepare the data for analysis and modeling. Data preparation involves the following steps:
+
+
+
+
+### Load the training and testing data
+train = pd.read_csv("Train_data.csv")
+test = pd.read_csv('Test_data.csv')
+
+
+
+### Display the first 10 rows of the training data
+train.iloc[:10]
+
+
+
+
+### Check for missing values in the training data
+A.isna().sum()
+
+### Splitting Data
+Split the data into training and testing sets. The training set is used to train the machine learning model, and the testing set is used to evaluate its performance.
+
+xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size=0.2, random_state=42)
+
+## Training the Model
+In this project, two different machine learning models are trained: a Decision Tree Classifier and a Random Forest Classifier.
+
+### Decision Tree Classifier
+A Decision Tree Classifier is a machine learning algorithm that uses a tree-like structure to classify data. It splits the data recursively based on feature values.
+
+
+
+#### Create a Decision Tree Classifier
+dtc = DecisionTreeClassifier(random_state=42)
+
+#### Train the Decision Tree model
+model_dtc = dtc.fit(xtrain, ytrain)
+
+3.2 Random Forest Classifier
+A Random Forest Classifier is an ensemble learning algorithm that uses multiple decision trees to make predictions.
+
+
+### Create a Random Forest Classifier
+rfc = RandomForestClassifier(random_state=42)
+
+#### Train the Random Forest model
+model_rfc = rfc.fit(xtrain, ytrain)
+
+## Evaluating the Model
+After training the models, it's essential to evaluate their performance on the testing set using various metrics such as accuracy, F1 score, classification report, and confusion matrix.
+
+
+
+#### Evaluate the Decision Tree model
+tr_pred_dtc = model_dtc.predict(xtrain)
+ts_pred_dtc = model_dtc.predict(xtest)
+
+print("The train accuracy is:", accuracy_score(ytrain, tr_pred_dtc))
+print("The test accuracy is:", accuracy_score(ytest, ts_pred_dtc))
+
+print("Classification Report:")
+print(classification_report(ytest, ts_pred_dtc))
+
+print("Confusion Matrix:")
+print(confusion_matrix(ytest, ts_pred_dtc))
+
+#### Evaluate the Random Forest model
+tr_pred_rfc = model_rfc.predict(xtrain)
+ts_pred_rfc = model_rfc.predict(xtest)
+
+print("Training accuracy is:", accuracy_score(ytrain, tr_pred_rfc))
+print("Testing accuracy is:", accuracy_score(ytest, ts_pred_rfc))
 
 ## Conclusion
-In conclusion, this disease prediction model represents a significant achievement in the field of healthcare. By harnessing the power of the Decision Tree Classifier algorithm, I successfully developed a robust and accurate model capable of predicting various diseases. The project's outcomes, including the high training and testing accuracies of 100%, demonstrate the model's effectiveness in early disease detection. This project holds immense value in healthcare applications, as accurate disease predictions empower healthcare professionals to provide timely interventions, resulting in improved patient outcomes.
+In this project, I used two machine learning models, the Decision Tree Classifier and the Random Forest Classifier for disease prognosis. Here are some key takeaways:
+
+* The Decision Tree Classifier is simple and easy to interpret but can be prone to overfitting.
+* The Random Forest Classifier is more complex, less prone to overfitting, but computationally expensive.
+* The choice of the best algorithm depends on the specific dataset and desired performance.
+* The models achieved high accuracy in this project, indicating their potential for disease diagnosis.
+
+## How to Execute the Project
+
+To run this project, follow these steps:
+
+* Make sure you have Python installed on your system.
+
+* Install the required libraries using pip:
+
+
+pip install numpy pandas seaborn matplotlib scikit-learn
+
+* Place your training data in a file named "Train_data.csv" and your testing data in a file named "Test_data.csv" in the project directory.
+
+* Execute the provided code snippets in a Python environment to load, prepare, train, and evaluate the modelsusing:
+
+
+python bangma.py
+
+
+
+
+
+
+
+
+
