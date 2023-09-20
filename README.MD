@@ -23,15 +23,16 @@ I developed this disease prediction model to accurately predict various diseases
 The first step in this project is to import the necessary libraries that will be used for data manipulation, visualization, and machine learning. The following libraries are imported:
 
 
-import numpy as np
-import pandas as pd
-import seaborn as sb
-import matplotlib.pyplot as plt
-from warnings import filterwarnings
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
+import numpy as np<br>
+import pandas as pd<br>
+import seaborn as sb<br>
+import matplotlib.pyplot as plt<br>
+from warnings import filterwarnings<br>
+from sklearn.model_selection import train_test_split<br>
+from sklearn.tree import DecisionTreeClassifier<br>
+from sklearn.ensemble import RandomForestClassifier<br>
+from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix<br>
+
 
 ## Data Preparation
 Once the necessary libraries are imported, the next step is to prepare the data for analysis and modeling. Data preparation involves the following steps:
