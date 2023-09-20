@@ -130,7 +130,7 @@ pip install numpy pandas seaborn matplotlib scikit-learn
 
 * Place your training data in a file named "Train_data.csv" and your testing data in a file named "Test_data.csv" in the project directory.
 
-* Execute the provided code snippets in a Python environment to load, prepare, train, and evaluate the modelsusing:
+* Execute the provided code snippets in a Python environment to load, prepare, train, and evaluate the models using:
 
 
 python bangma.py
